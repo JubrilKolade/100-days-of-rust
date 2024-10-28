@@ -1,3 +1,5 @@
+//use core::panicking::panic;
+
 #[allow(unused_variables)]
 
 fn main() {  
@@ -280,5 +282,127 @@ fn main() {
 
 
     // DAY FOUR - STATEMENTS, EXPRESSIONS AND FUNCTIONS
+    // Statements - Instructions that perform some action but do not produce a value
+    // Function definitions are statements, as well as all code that ends with ';'
+    // Expression - evaluate to a resultant value
+  
+    let x: u32 = 5u32;
 
+    let y: u32 = {
+        let x_squared = x * x;
+        let x_cube = x_squared * x;
+
+        // This expression will be assigned to `y`
+        x_cube + x_squared + x
+    };
+
+    let z: () = {
+        // The semicolon suppresses this expression and `()` is assigned to `z`
+        2 * x;
+    };
+
+    println!("x is {:?}", x);
+    println!("y is {:?}", y);
+    println!("z is {:?}", z);
+
+    //1.  Make it work with two ways
+    let v:i32  = {
+        let mut x: i32 = 1;
+        x += 2;
+        x
+    };
+ 
+    assert_eq!(v, 3);
+    println!("Success 1 day 4!");
+
+    
+    //2.
+    let v: i32 = {
+        let x: i32 = 3;
+        x
+    };
+    assert!(v == 3);
+    println!("Success 2 day 4!");
+
+
+    //3.
+    let s:i32 = add(1 , 2);
+    assert_eq!(s, 3);
+    println!("Success 3 day 4!");
+    fn add(x: i32, y: i32) -> i32  {
+        x + y
+    }
+ 
+
+    // FUNCTIONS
+    
+
+    //4. Don't modify the following two lines!
+    let (x, y) = (1, 2);
+    let s: i32 = sumM(x, y);
+
+    assert_eq!(s, 3);
+
+    println!("Success 4 day 4!");
+
+    fn sumM(x: i32, y: i32) -> i32 {
+        x + y
+    }
+
+    //5.
+    print(); 
+    // Replace i32 with another type
+    fn print() -> () {
+       println!("Success 5 day 4!");
+    }
+
+    //6. Solve it in two ways
+    // DON'T let `println!` work
+    never_return();
+    println!("Failed!");
+
+    fn never_return() -> () { //replace () wit !
+        // Implement this function, don't modify the fn signatures
+        // panic!() //uncomment
+        
+    }
+
+    
+    //7.
+    println!("Success 7 day 4!");
+    fn get_option(tp: u8) -> Option<i32> {
+        match tp {
+            1 => {
+                // TODO
+            }
+            _ => {
+                // TODO
+            }
+        };
+        
+        // Rather than returning a None, we use a diverging function instead
+        never_return_fn()
+    }
+
+    // IMPLEMENT this function in THREE ways
+    fn never_return_fn() -> ! {
+        panic!() //or
+        // unimplemented!() //or
+        //todo!()
+    }
+
+    //8. FILL in the blank
+    let b: bool = false;
+
+    let _v: i32 = match b {
+        true => 1,
+        // Diverging functions can also be used in match expression to replace a value of any value
+        false => {
+            println!("Success 8 day 4!");
+            panic!("we have no value for `false`, but we can panic");
+        }
+    };
+
+    println!("Exercise Failed if printing out this line!");
+    
 }
