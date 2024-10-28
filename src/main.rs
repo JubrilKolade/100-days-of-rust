@@ -404,5 +404,8 @@ fn main() {
     };
 
     println!("Exercise Failed if printing out this line!");
+
+
+    //DAY FIVE - SCOPE, OWNERSHIP, MEMORY, CONTROL FLOWS
     
 }
