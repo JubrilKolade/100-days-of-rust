@@ -209,7 +209,74 @@ fn main() {
     println!("1 << 5 is {}", 1u32 << 5);
     println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
 
+    
+    
     // DAY THREE- CHAR, BOOL AND UNIT
+    
+    //1. Make it work char
+    use std::mem::size_of_val;
+    
+    let c1: char = 'a';
+    assert_eq!(size_of_val(&c1),4); 
+
+    let c2: char = '中';
+    assert_eq!(size_of_val(&c2),4); 
+
+    println!("Success 1 day 3!");
+
+    
+    //2. Make it work - char
+    let c1: char = '中'; //change double quotes to single. double is for &str type, single is for char type 
+    print_char(c1);
+ 
+    fn print_char(c : char) {
+        println!("{}", c);
+    }
+
+    
+    //3. Make println! work - bool
+    let _f: bool = false;
+
+    let t: bool = true;
+    if t {
+        println!("Success 3 day 3!");
+    } 
+   
+   
+    //4.  Make it work - bool
+    let f: bool = true;
+    let t: bool = true || false;
+    assert_eq!(t, f);
+
+    println!("Success 4 day 3!");
+
+
+    
+    //5. Make it work, don't modify `implicitly_ret_unit` ! - unit type
+    let _v: () = ();
+
+    let v: (i32, i32) = (2, 3);
+    assert_eq!(_v, implicitly_ret_unit());
+
+    println!("Success 5 day 3!");
+
+    fn implicitly_ret_unit() {
+        println!("I will return a ()");
+    }
+
+    // Don't use this one
+    fn explicitly_ret_unit() -> () {
+        println!("I will return a ()");
+    }
+
+
+    // 6. What's the size of the unit type?
+    // Modify `4` in assert to make it work
+    // use std::mem::size_of_val;
+    let unit: () = ();
+    assert!(size_of_val(&unit) == 0);
+
+    println!("Success 6 day 3!");
 
 
     // DAY FOUR - STATEMENTS, EXPRESSIONS AND FUNCTIONS
