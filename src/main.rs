@@ -415,5 +415,7 @@ fn main() {
     //DAY EIGHT - GENERICS AND TRAITS
 
     //DAY NINE - COLLECTION TYPES
+
+    //DAY TEN - TYPE CONVERSION
     
 }
