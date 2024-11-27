@@ -392,21 +392,52 @@ fn main() {
     }
 
     //8. FILL in the blank
-    let b: bool = false;
+    // let b: bool = false;
 
-    let _v: i32 = match b {
-        true => 1,
-        // Diverging functions can also be used in match expression to replace a value of any value
-        false => {
-            println!("Success 8 day 4!");
-            panic!("we have no value for `false`, but we can panic");
-        }
-    };
+    // let _v: i32 = match b {
+    //     true => 1,
+    //     // Diverging functions can also be used in match expression to replace a value of any value
+    //     false => {
+    //         println!("Success 8 day 4!");
+    //         panic!("we have no value for `false`, but we can panic");
+    //     }
+    // };
 
-    println!("Exercise Failed if printing out this line!");
+    // println!("Exercise Failed if printing out this line!");
 
 
     //DAY FIVE - SCOPE, OWNERSHIP, MEMORY, CONTROL FLOWS
+    // 1.  Use as many approaches as you can to make it work
+     let x: String = String::from("Hello world");
+     let y: String = x.clone();
+     println!("{}, {}",x, y);
+     println!("Success 1 day 5!");
+
+     //2.  Don't modify code in main!
+    let s1: String = String::from("Hello world");
+    let s2: String  = take_ownership(s1);
+
+    println!("{}", s2);
+    println!("Success 2 day 5!");
+
+    // Only modify the code below!
+    fn take_ownership(s: String) -> String {
+        println!("{}", s);
+        return s;
+    };
+
+    
+    let s = give_ownership();
+    println!("{}", s);
+    println!("Success 3 day 5!");
+
+    // Only modify the code below!
+    fn give_ownership() -> String {
+        let s: String = String::from("Hello world");
+        // Convert String to Vec
+        let _s= s.as_bytes();
+        return s;
+    }
 
     //DAY SIX - COMPOUND TYPES, PATTERN MATCH
 
@@ -463,5 +494,7 @@ fn main() {
     //DAY THIRTY TWO - A CALCULATOR 
 
     //DAY THIRTY-THREE - VECTOR, ARRAYS
+
+    //DAY THIRTY FOUR - MORE ON TUPLES
 
 }
