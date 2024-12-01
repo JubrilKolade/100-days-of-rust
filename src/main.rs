@@ -502,4 +502,6 @@ fn main() {
     //DAY THIRTY SIX - I AM TIRED
 
     //DAY THIRTY SEVEN - RUST
+
+     //DAY THIRTY EIGHT - RUST
 }
