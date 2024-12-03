@@ -506,4 +506,6 @@ fn main() {
      //DAY THIRTY EIGHT - RUST
 
      //DAY THIRTY NINE - RUST
+
+     //day forty - rust
 }
