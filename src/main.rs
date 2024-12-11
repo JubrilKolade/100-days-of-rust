@@ -406,7 +406,7 @@ fn main() {
     // println!("Exercise Failed if printing out this line!");
 
 
-    //DAY FIVE - SCOPE, OWNERSHIP, MEMORY, CONTROL FLOWS
+    //DAY FIVE - SCOPE, OWNERSHIP, MUTABILITY, MEMORY, CONTROL FLOWS
     // 1.  Use as many approaches as you can to make it work
      let x: String = String::from("Hello world");
      let y: String = x.clone();
@@ -426,7 +426,7 @@ fn main() {
         return s;
     };
 
-    
+    //3.
     let s = give_ownership();
     println!("{}", s);
     println!("Success 3 day 5!");
@@ -438,6 +438,68 @@ fn main() {
         let _s= s.as_bytes();
         return s;
     }
+
+    //4. fix the error without removing code liner
+    let s: String = String::from("hello, world");
+
+    print_str(s.clone());
+
+    println!("{}", s);
+
+    fn print_str(s: String) {
+        println!("{}", s);
+        println!("Success 4 day 5!");
+    }
+
+    //5. dont use clone, use copy instead
+    let x: (i32, i32, (), &str) = (1, 2, (), "hello");
+    let y: (i32, i32, (), &str) = x;
+    println!("{:?}, {:?}", x, y);
+    println!("Success 5 day 5!");
+
+    //MUTABILITY
+    //6.
+    let s: String = String::from("hello, ");
+
+    //Modify this line only!
+    let mut s1 = s;
+
+    s1.push_str("World");
+    
+    println!("Success");
+    println!("Success 6 day 5!");
+
+    //7. 
+    let x: Box<i32>  = Box::new(5);
+
+    let mut y: Box<i32> = Box::new(1);         //implement this , dont change other lines!
+
+    *y = 4;
+
+    assert_eq!(*x, 5);
+
+    println!("success!");
+    println!("Success 7 day 5!");
+
+    //Partial move
+
+    //8.
+    let t: (String, String) = (String::from("hello"), String::from("world"));
+
+    let _s = t.0;
+
+    //Modify this line only, dont use '_s'
+    println!("{:?}", t.1 );
+    println!("Success 8 day 5!");
+
+    //9.
+    let t: (String, String) = (String::from("hello"), String::from("world"));
+
+    //fill the blanks
+    let (s1, s2) = t.clone();
+    
+    println!("{:?}, {:?}", s1, s2, t); // -> "hello", "world", ("hello", "world")
+
 
     //DAY SIX - COMPOUND TYPES, PATTERN MATCH
 
@@ -522,6 +584,8 @@ fn main() {
     //DAY FORTY six - RUST
 
     //DAY FORTY seven - RUST
+
+    //DAY FORTY eight - RUST
 
 
 }
