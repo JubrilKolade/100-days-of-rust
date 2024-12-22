@@ -601,11 +601,13 @@ fn main() {
 
     //day fifty-five -rust
 
-     //day fifty-six -rust
+    //day fifty-six -rust
 
-     //day fifty-seven -rust
+    //day fifty-seven -rust
 
-     //day fifty-eight -rust
+    //day fifty-eight -rust
+
+    //day fifty-nine -rust
 
 
 
