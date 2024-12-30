@@ -623,6 +623,8 @@ fn main() {
 
     //day sixty six -rust
 
+    //day sixty seven - rust
+
 
 
 
